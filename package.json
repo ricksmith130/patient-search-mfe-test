@@ -1,0 +1,42 @@
+{
+  "name": "patient-search-mfe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "serve": "vite build && vite preview --port 5174 --strictPort"
+  },
+  "dependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "@reduxjs/toolkit": "^2.9.0",
+    "classnames": "^2.5.1",
+    "nhsuk-frontend": "^10.3.1",
+    "nhsuk-react-components": "^6.0.0-beta.3",
+    "nhsuk-react-components-extensions": "^2.3.5-beta",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-grid-system": "^8.2.1",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.13.0",
+    "redux": "^5.0.1",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
+  }
+}

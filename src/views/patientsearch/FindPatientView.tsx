@@ -1,0 +1,117 @@
+import { Container, Hero } from "nhsuk-react-components";
+import React, { lazy, Suspense, useEffect } from "react";
+
+import { NHS_NUMBER_SEARCH } from "ncrs-host/findTabsConstants";
+import { initialiseRefreshCheck } from "ncrs-host/initialiseRefreshCheck";
+import { useAppState } from "ncrs-host/useAppState";
+import { useSkipLink } from "ncrs-host/useSkipLink";
+import Bulletins from "ncrs-host/Bulletins";
+import FindPatientConnectionWarning from "ncrs-host/FindPatientConnectionWarning";
+import ConnectedPatientNotFound from "ncrs-host/PatientNotFound";
+import PatientRetrievalBlocked from "ncrs-host/PatientRetrievalBlocked";
+import FindPatientTabs from "../../wrappers/patientsearch/FindPatientTabs";
+import { SelectedSearchViewTab } from "ncrs-host/AppStateTypes";
+import {
+    ADVANCED_SEARCH_TITLE,
+    BASIC_SEARCH_TITLE,
+    NHS_NUMBER_SEARCH_TITLE,
+    POSTCODE_SEARCH_TITLE,
+} from "ncrs-host/SearchTitles";
+import { NO_NHS_NUMBER_FOUND_BUTTON_TEXT } from "ncrs-host/PatientNotFoundStrings";
+import { FIND_PATIENT_PAGE_HEADER } from "ncrs-host/FindPatientStrings";
+
+const tabDispatch = {
+    NHS_NUMBER_SEARCH: lazy(
+        () =>
+            import(
+                /* webpackChunkName: "nhs-number-search" */ "../../wrappers/patientsearch/NhsNumberSearchForm"
+            )
+    ),
+    BASIC_SEARCH: lazy(
+        () =>
+            import(
+                /* webpackChunkName: "basic-search" */ "../../wrappers/patientsearch/BasicSearchForm"
+            )
+    ),
+    ADVANCED_SEARCH: lazy(
+        () =>
+            import(
+                /* webpackChunkName: "advanced-search" */ "../../wrappers/patientsearch/AdvancedSearchForm"
+            )
+    ),
+    POSTCODE_SEARCH: lazy(
+        () =>
+            import(
+                /* webpackChunkName: "postcode-search" */ "../../wrappers/patientsearch/PostcodeSearchForm"
+            )
+    ),
+};
+
+const evaluateTab = (tabKey?: SelectedSearchViewTab) =>
+    tabKey ? tabDispatch[tabKey] : tabDispatch[NHS_NUMBER_SEARCH];
+
+const FindPatientView: React.FC = () => {
+    initialiseRefreshCheck();
+    const selectedTab = useAppState(
+        (state: any) => state.uiState.tabState.selectedSearchTab
+    );
+    const RenderedTab = evaluateTab(selectedTab);
+
+    useEffect(() => {
+        switch (selectedTab) {
+            case "NHS_NUMBER_SEARCH":
+                window.document.title = NHS_NUMBER_SEARCH_TITLE;
+                break;
+            case "BASIC_SEARCH":
+                window.document.title = BASIC_SEARCH_TITLE;
+                break;
+            case "ADVANCED_SEARCH":
+                window.document.title = ADVANCED_SEARCH_TITLE;
+                break;
+            case "POSTCODE_SEARCH":
+                window.document.title = POSTCODE_SEARCH_TITLE;
+                break;
+        }
+    }, [selectedTab]);
+
+    useEffect(() => window.scroll(0, 0), []);
+
+    useSkipLink(".find-a-patient");
+
+    return (
+        <div
+            id="find-a-patient"
+            className="find-a-patient"
+            tabIndex={-1}
+        >
+            <ConnectedPatientNotFound />
+            <PatientRetrievalBlocked
+                returnButtonText={NO_NHS_NUMBER_FOUND_BUTTON_TEXT}
+            />
+            <FindPatientConnectionWarning />
+            <div className="above-tab-space">
+                <Hero>
+                    <Hero.Heading>{FIND_PATIENT_PAGE_HEADER}</Hero.Heading>
+                </Hero>
+            </div>
+            <FindPatientTabs />
+
+            <Container className="patient-search-form-container ">
+                <Suspense fallback={null}>
+                    <main>
+                        <div className="find-patient-grid">
+                            <div className="find-patient-grid__form">
+                                <RenderedTab />
+                            </div>
+                            <div className="find-patient-grid__bulletins">
+                                <Bulletins />
+                            </div>
+                        </div>
+                    </main>
+                </Suspense>
+            </Container>
+        </div>
+    );
+};
+
+export default FindPatientView;
