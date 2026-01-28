@@ -15,7 +15,7 @@ export default defineConfig({
         'ncrs-host': 'http://localhost:5173/nationalcarerecordsservice/static/remoteEntry.js',
       },
       exposes: {
-        './App': './src/views/patientsearch/FindPatientView.tsx',
+        './App': './src/App.tsx',
       },
       shared: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'nhsuk-react-components', 'nhsuk-react-components-extensions']
     }),

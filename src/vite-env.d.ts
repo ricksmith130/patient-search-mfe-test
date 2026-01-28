@@ -41,55 +41,6 @@ declare module "ncrs-host/PatientNotFoundStrings" {
     export const NHS_NUMBER_RETRIEVAL_BLOCKED_TITLE: string;
     export const NHS_NUMBER_RETRIEVAL_BLOCKED_DEFAULT: string;
 }
-
-// FindPatientStrings
-declare module "ncrs-host/FindPatientStrings" {
-    export const FIND_PATIENT_PAGE_HEADER: string;
-    export const FIND_PATIENT_NHS_NUMBER: string;
-    export const FIND_PATIENT_NHS_NUMBER_LABEL: string;
-    export const FIND_PATIENT_BASIC_DETAILS: string;
-    export const FIND_PATIENT_BASIC_DETAILS_LABEL: string;
-    export const FIND_PATIENT_ADVANCED_DETAILS: string;
-    export const FIND_PATIENT_ADVANCED_DETAILS_LABEL: string;
-    export const FIND_PATIENT_POSTCODE: string;
-    export const FIND_PATIENT_POSTCODE_LABEL: string;
-    export const NHS_NUM_SEARCH_LABEL: string;
-    export const NHS_NUM_SEARCH_EXAMPLE: string;
-    export const NHS_NUM_SEARCH_FIND_A_PATIENT: string;
-    export const NHS_NUM_SEARCH_TOO_SHORT: string;
-    export const NHS_NUM_SEARCH_INVALID: string;
-    export const BASIC_SEARCH_HEADER: string;
-    export const BASIC_SEARCH_HINT: string;
-    export const BASIC_SEARCH_FIND_A_PATIENT: string;
-    export const PATIENT_SEARCH_GENDER_LABEL: string;
-    export const PATIENT_SEARCH_GENDER_FEMALE_LABEL: string;
-    export const PATIENT_SEARCH_GENDER_MALE_LABEL: string;
-    export const PATIENT_SEARCH_GENDER_SEARCH_ALL_LABEL: string;
-    export const PATIENT_SEARCH_GENDER_SEARCH_ALL_CONDITIONAL_TEXT: string;
-    export const PATIENT_SEARCH_SURNAME_LABEL: string;
-    export const PATIENT_SEARCH_FIRST_NAME_LABEL: string;
-    export const PATIENT_SEARCH_DOB_LABEL: string;
-    export const PATIENT_SEARCH_DOB_RANGE_LABEL: string;
-    export const PATIENT_SEARCH_DOD_LABEL: string;
-    export const PATIENT_SEARCH_DOD_RANGE_LABEL: string;
-    export const PATIENT_SEARCH_POSTCODE_LABEL: string;
-    export const PATIENT_SEARCH_DATE_FROM: string;
-    export const PATIENT_SEARCH_DATE_TO: string;
-    export const PATIENT_SEARCH_AGE_RANGE_FROM_LABEL: string;
-    export const PATIENT_SEARCH_AGE_RANGE_TO_LABEL: string;
-    export const PATIENT_SEARCH_WIDEN_LABEL: string;
-    export const PATIENT_SEARCH_INCLUDE_DOD_LABEL: string;
-    export const ADVANCED_SEARCH_HEADER: string;
-    export const ADVANCED_SEARCH_HINT: string;
-    export const ADVANCED_SEARCH_FIND_A_PATIENT: string;
-    export const POSTCODE_SEARCH_HEADER: string;
-    export const POSTCODE_SEARCH_HINT: string;
-    export const POSTCODE_FIND_A_PATIENT: string;
-    export const POSTCODE_SEARCH_POSTCODE_LABEL: string;
-    export const POSTCODE_SEARCH_EFFECTIVE_RANGE_LABEL: string;
-    export const POSTCODE_SEARCH_INCLUDE_PREVIOUS_OCCUPANTS: string;
-}
-
 // Bulletins component
 declare module "ncrs-host/Bulletins" {
     const Bulletins: React.FC;

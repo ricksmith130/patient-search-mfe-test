@@ -9,7 +9,6 @@ import Bulletins from "ncrs-host/Bulletins";
 import FindPatientConnectionWarning from "ncrs-host/FindPatientConnectionWarning";
 import ConnectedPatientNotFound from "ncrs-host/PatientNotFound";
 import PatientRetrievalBlocked from "ncrs-host/PatientRetrievalBlocked";
-import FindPatientTabs from "../../wrappers/patientsearch/FindPatientTabs";
 import { SelectedSearchViewTab } from "ncrs-host/AppStateTypes";
 import {
     ADVANCED_SEARCH_TITLE,
@@ -18,33 +17,18 @@ import {
     POSTCODE_SEARCH_TITLE,
 } from "ncrs-host/SearchTitles";
 import { NO_NHS_NUMBER_FOUND_BUTTON_TEXT } from "ncrs-host/PatientNotFoundStrings";
-import { FIND_PATIENT_PAGE_HEADER } from "ncrs-host/FindPatientStrings";
+import { FIND_PATIENT_PAGE_HEADER } from "../constants/FindPatientStrings";
+import FindPatientTabs from "../components/FindPatientTabs";
+import NhsNumberSearchForm from "../components/NhsNumberSearchForm";
+import BasicSearchForm from "../components/BasicSearchForm";
+import AdvancedSearchForm from "../components/AdvancedSearchForm";
+import PostcodeSearchForm from "../components/PostcodeSearchForm";
 
 const tabDispatch = {
-    NHS_NUMBER_SEARCH: lazy(
-        () =>
-            import(
-                /* webpackChunkName: "nhs-number-search" */ "../../wrappers/patientsearch/NhsNumberSearchForm"
-            )
-    ),
-    BASIC_SEARCH: lazy(
-        () =>
-            import(
-                /* webpackChunkName: "basic-search" */ "../../wrappers/patientsearch/BasicSearchForm"
-            )
-    ),
-    ADVANCED_SEARCH: lazy(
-        () =>
-            import(
-                /* webpackChunkName: "advanced-search" */ "../../wrappers/patientsearch/AdvancedSearchForm"
-            )
-    ),
-    POSTCODE_SEARCH: lazy(
-        () =>
-            import(
-                /* webpackChunkName: "postcode-search" */ "../../wrappers/patientsearch/PostcodeSearchForm"
-            )
-    ),
+    NHS_NUMBER_SEARCH: NhsNumberSearchForm,
+    BASIC_SEARCH: BasicSearchForm,
+    ADVANCED_SEARCH: AdvancedSearchForm,
+    POSTCODE_SEARCH: PostcodeSearchForm,
 };
 
 const evaluateTab = (tabKey?: SelectedSearchViewTab) =>

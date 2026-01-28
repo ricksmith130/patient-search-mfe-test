@@ -1,0 +1,56 @@
+{
+    "customSyntax": "postcss-scss",
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended-scss",
+        "stylelint-config-idiomatic-order"
+    ],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "annotation-no-unknown": [
+            true,
+            {
+                "ignoreAnnotations": ["/^default/"]
+            }
+        ],
+
+        "import-notation": "string",
+
+        "color-hex-length": "long",
+        "color-named": "never",
+        "declaration-property-value-keyword-no-deprecated": [
+            true,
+            {
+                "ignoreKeywords": ["break-word"]
+            }
+        ],
+        "color-no-invalid-hex": true,
+        "comment-word-disallowed-list": ["sass-lint"],
+        "declaration-no-important": true,
+        "font-weight-notation": "named-where-possible",
+        "length-zero-no-unit": true,
+        "scss/load-partial-extension": "always",
+        "selector-class-pattern": [
+            "^([a-z][a-zA-Z0-9]*)([-a-zA-Z0-9]*)*(__[a-zA-Z0-9]*)*([-a-zA-Z0-9]*)*$",
+            {
+                "message": "Expected class selector to be BEM style"
+            }
+        ],
+        "selector-id-pattern": [
+            "^([a-z][a-zA-Z0-9]*)([-a-zA-Z0-9]*)*(__[a-zA-Z0-9]*)*([-a-zA-Z0-9]*)*$",
+            {
+                "message": "Expected id selector to be BEM style"
+            }
+        ],
+        "selector-max-id": 0,
+        "time-min-milliseconds": 150,
+        "unit-allowed-list": [
+            ["rem", "em", "%", "px", "deg", "ms", "vh", "vw", "s"],
+            {
+                "ignoreProperties": {
+                    "pt": ["font-size"]
+                }
+            }
+        ]
+    }
+}

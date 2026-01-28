@@ -17,13 +17,7 @@ import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionC
 import { nhsNumberSearch } from "ncrs-host/NhsNumberQueryActionCreator";
 import { useAppDispatch } from "ncrs-host/store";
 import { SEARCH_BY } from "ncrs-host/CommonStrings";
-import {
-    NHS_NUM_SEARCH_EXAMPLE,
-    NHS_NUM_SEARCH_FIND_A_PATIENT,
-    NHS_NUM_SEARCH_INVALID,
-    NHS_NUM_SEARCH_LABEL,
-    NHS_NUM_SEARCH_TOO_SHORT,
-} from "ncrs-host/FindPatientStrings";
+import { NHS_NUM_SEARCH_TOO_SHORT, NHS_NUM_SEARCH_INVALID, NHS_NUM_SEARCH_LABEL, NHS_NUM_SEARCH_EXAMPLE, NHS_NUM_SEARCH_FIND_A_PATIENT } from "../constants/FindPatientStrings";
 
 const validateNhsNumber = (nhsNumber: string) => {
     if (nhsNumber.length !== 10) {
