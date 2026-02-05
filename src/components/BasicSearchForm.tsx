@@ -122,10 +122,10 @@ const BasicSearchForm: React.FC<Props> = (props) => {
 
     // Get state from Redux
     const internetConnectionFromState = useAppSelector(
-        (state: any) => state.uiState.connection.internetConnection
+        (state: any) => state.connection.internetConnection
     );
     const findPatientFormStateFromState = useAppSelector(
-        (state: any) => state.uiState.findPatient
+        (state: any) => state.findPatient
     );
 
     // Use props if provided (for testing), otherwise use state

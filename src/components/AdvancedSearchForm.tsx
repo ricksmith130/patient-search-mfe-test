@@ -190,10 +190,10 @@ const AdvancedSearchForm: React.FC<Props> = (props) => {
   const dispatch = useAppDispatch();
 
   const findPatientFormStateFromState = useAppSelector(
-    (state: any) => state.uiState.findPatient,
+    (state: any) => state.findPatient,
   );
   const internetConnectionFromState = useAppSelector(
-    (state: any) => state.uiState.connection.internetConnection,
+    (state: any) => state.connection.internetConnection,
   );
 
   const findPatientFormState =

@@ -33,10 +33,10 @@ const NhsNumberSearchForm: React.FC = () => {
     const dispatch = useAppDispatch();
     const deepLink = useAppState((state: any) => state.deepLink);
     const token = useAppState(
-        (state: any) => state.uiState.patientSearch.searchToken
+        (state: any) => state.patientSearch.searchToken
     );
     const internetConnection = useAppState(
-        (state: any) => state.uiState.connection.internetConnection
+        (state: any) => state.connection.internetConnection
     );
     const [validationError, setValidationError] = useState<string>("");
     const [searchToken, setSearchToken] = useState<string>(token || "");

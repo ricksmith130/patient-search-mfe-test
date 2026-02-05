@@ -169,13 +169,13 @@ const toQueryArguments = (data: InputsState): PostcodeSearchArguments => {
 const PostcodeSearchForm: React.FC<Props> = () => {
     const dispatch = useAppDispatch();
     const findPatientFormState = useAppSelector(
-        (state: any) => state.uiState.findPatient
+        (state: any) => state.findPatient
     );
     const internetConnection = useAppSelector(
-        (state: any) => state.uiState.connection.internetConnection
+        (state: any) => state.connection.internetConnection
     );
     const dateInputMethods = useAppSelector(
-        (state: any) => state.uiState.findPatient.dateInputMethods
+        (state: any) => state.findPatient.dateInputMethods
     );
 
     const [inputs, setInputs] = useState<InputsState>(() =>

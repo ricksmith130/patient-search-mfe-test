@@ -34,9 +34,9 @@ export const removeFocusFromElement = (id: string) => {
 
 const FindPatientTabs: React.FC<FindPatientTabsProps> = () => {
     const selectedTab = useAppState(
-        (state: any) => state.uiState.tabState.selectedSearchTab
+        (state: any) => state.tabState.selectedSearchTab
     );
-    const userPermissions = useAppState((state: any) => state.uiState.userDetails);
+    const userPermissions = useAppState((state: any) => state.userDetails);
     const dispatch = useAppDispatch();
     return (
         <TabSet className="find-patient-tabset">

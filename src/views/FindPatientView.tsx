@@ -37,7 +37,7 @@ const evaluateTab = (tabKey?: SelectedSearchViewTab) =>
 const FindPatientView: React.FC = () => {
     initialiseRefreshCheck();
     const selectedTab = useAppState(
-        (state: any) => state.uiState.tabState.selectedSearchTab
+        (state: any) => state.tabState.selectedSearchTab
     );
     const RenderedTab = evaluateTab(selectedTab);
 
