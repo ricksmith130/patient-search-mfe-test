@@ -27,8 +27,7 @@ import QueryResultsTable from "./QueryResultsTable";
 import { logTransaction } from "ncrs-host/LogActionCreator";
 // @ts-ignore - Federated module
 import { nhsNumberSearch } from "ncrs-host/NhsNumberQueryActionCreator";
-// @ts-ignore - Federated module
-import { changeTableOptions } from "ncrs-host/SaveQueryActionCreator";
+import { changeTableOptions } from "../../redux/slices/queryResultsSlice";
 // @ts-ignore - Federated module
 import { useAppDispatch, useAppSelector } from "ncrs-host/store";
 // @ts-ignore - Federated module

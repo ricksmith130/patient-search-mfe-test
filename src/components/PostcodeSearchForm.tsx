@@ -60,11 +60,11 @@ import FormErrorSummary, {
     FormErrorSummaryError,
 } from "ncrs-host/FormErrorSummary";
 import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
-import { runPostcodeQuery } from "ncrs-host/PostcodeSearchQueryActionCreator";
+import { performPostcodeSearch } from "../redux/thunks/patientSearchThunks";
 import {
     resetFormState,
     updateFormState,
-} from "ncrs-host/SaveQueryActionCreator";
+} from "../redux/slices/findPatientSlice";
 import { useAppDispatch, useAppSelector } from "ncrs-host/store";
 import {
     DateParts,
@@ -310,7 +310,7 @@ const PostcodeSearchForm: React.FC<Props> = () => {
 
             if (nextIsValid) {
                 saveFormState(nextInputs, dobMode);
-                dispatch(runPostcodeQuery(toQueryArguments(nextInputs)));
+                dispatch(performPostcodeSearch(toQueryArguments(nextInputs)));
             }
         },
         [

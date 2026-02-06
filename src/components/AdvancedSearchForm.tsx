@@ -60,11 +60,11 @@ import FormErrorSummary, {
   FormErrorSummaryError,
 } from "ncrs-host/FormErrorSummary";
 import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
-import { runAdvancedQuery } from "ncrs-host/AdvancedSearchQueryActionCreator";
+import { performAdvancedSearch } from "../redux/thunks/patientSearchThunks";
 import {
   resetFormState as resetFormStateAction,
   updateFormState as updateFormStateAction,
-} from "ncrs-host/SaveQueryActionCreator";
+} from "../redux/slices/findPatientSlice";
 import { useAppDispatch, useAppSelector } from "ncrs-host/store";
 import { getEmptyDateParts } from "ncrs-host/SampleEmptyStates";
 import {
@@ -203,7 +203,7 @@ const AdvancedSearchForm: React.FC<Props> = (props) => {
 
   const runAdvancedQueryAction =
     props.runAdvancedQuery ??
-    ((q: QueryArguments) => dispatch(runAdvancedQuery(q)));
+    ((q: QueryArguments) => dispatch(performAdvancedSearch(q)));
   const updateFormState =
     props.updateFormState ??
     ((state: SearchFormUpdate) => dispatch(updateFormStateAction(state)));

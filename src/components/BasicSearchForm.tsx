@@ -48,11 +48,11 @@ import FormErrorSummary, {
     FormErrorSummaryError,
 } from "ncrs-host/FormErrorSummary";
 import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
-import { runBasicQuery as runBasicQueryAction } from "ncrs-host/BasicSearchQueryActionCreator";
+import { performBasicSearch } from "../redux/thunks/patientSearchThunks";
 import {
     resetFormState as resetFormStateAction,
     updateFormState as updateFormStateAction,
-} from "ncrs-host/SaveQueryActionCreator";
+} from "../redux/slices/findPatientSlice";
 import { useAppDispatch, useAppSelector } from "ncrs-host/store";
 import { getEmptyDateParts } from "ncrs-host/SampleEmptyStates";
 import {
@@ -137,7 +137,7 @@ const BasicSearchForm: React.FC<Props> = (props) => {
     // Create action dispatchers
     const runBasicQuery =
         props.runBasicQuery ??
-        ((q: QueryArguments) => dispatch(runBasicQueryAction(q)));
+        ((q: QueryArguments) => dispatch(performBasicSearch(q)));
     const updateFormState =
         props.updateFormState ??
         ((state: SearchFormUpdate) => dispatch(updateFormStateAction(state)));
