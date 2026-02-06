@@ -1,0 +1,5 @@
+export const RESET_PATIENT_SEARCH_FORM_STATE = 'RESET_PATIENT_SEARCH_FORM_STATE'
+export const PATIENT_CHANGED = 'PATIENT_CHANGED'
+export const BASIC_SEARCH_PENDING = 'patientSearch/basicSearch/pending'
+export const ADVANCED_SEARCH_PENDING = 'patientSearch/advancedSearch/pending'
+export const POSTCODE_SEARCH_PENDING = 'patientSearch/postcodeSearch/pending'
