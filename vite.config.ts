@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+import { federation } from '@module-federation/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,12 +12,27 @@ export default defineConfig({
       name: 'patient-search-mfe',
       filename: 'remoteEntry.js',
       remotes: {
-        'ncrs-host': 'http://localhost:5173/nationalcarerecordsservice/static/remoteEntry.js',
+        'ncrs-host': {
+          type: 'module',
+          name: 'ncrs-host',
+          entry: 'http://localhost:5173/nationalcarerecordsservice/static/remoteEntry.js',
+          entryGlobalName: 'ncrs_host',
+          shareScope: 'default'
+        },
       },
       exposes: {
         './App': './src/App.tsx',
       },
-      shared: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'nhsuk-react-components', 'nhsuk-react-components-extensions']
+      shareScope: 'default',
+      shared: {
+        "react": { singleton: true, requiredVersion: "19.1.1" },
+        "react-dom": { singleton: true, requiredVersion: "19.1.1" },
+        "redux": { singleton: true, requiredVersion: "^5.0.1" },
+        "react-redux": { singleton: true, requiredVersion: "^9.2.0" },
+        "react-router-dom": { singleton: true, requiredVersion: "7.9.6" },
+        "nhsuk-react-components": { singleton: true, requiredVersion: "^6.0.0-beta.3" },
+        "nhsuk-react-components-extensions": { singleton: true, requiredVersion: "^2.3.5-beta" },
+      }
     }),
   ],
   build: {

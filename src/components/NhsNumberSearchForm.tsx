@@ -1,8 +1,6 @@
 import { Button, Form, HintText } from "nhsuk-react-components";
 import { InputMask as MaskedInput } from "nhsuk-react-components-extensions";
 import React, { SyntheticEvent, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 import { NHS_NUMBER_SEARCH_LABEL_ID } from "ncrs-host/FormIdConstants";
 import {
     NHS_NUMBER_HINT_ID,
@@ -29,7 +27,6 @@ const validateNhsNumber = (nhsNumber: string) => {
 };
 
 const NhsNumberSearchForm: React.FC = () => {
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const deepLink = useAppState((state: any) => state.deepLink);
     const token = useAppState(
