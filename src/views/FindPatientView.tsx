@@ -5,7 +5,7 @@ import { NHS_NUMBER_SEARCH } from "ncrs-host/findTabsConstants";
 import { initialiseRefreshCheck } from "ncrs-host/initialiseRefreshCheck";
 import { useAppState } from "ncrs-host/useAppState";
 import { useSkipLink } from "ncrs-host/useSkipLink";
-import Bulletins from "ncrs-host/Bulletins";
+// import Bulletins from "ncrs-host/Bulletins"; // TODO: Temporarily disabled
 import FindPatientConnectionWarning from "ncrs-host/FindPatientConnectionWarning";
 import ConnectedPatientNotFound from "ncrs-host/PatientNotFound";
 import PatientRetrievalBlocked from "ncrs-host/PatientRetrievalBlocked";
@@ -87,9 +87,11 @@ const FindPatientView: React.FC = () => {
                             <div className="find-patient-grid__form">
                                 <RenderedTab />
                             </div>
+                            {/* TODO: Bulletins temporarily disabled - needs conditional logic
                             <div className="find-patient-grid__bulletins">
                                 <Bulletins />
                             </div>
+                            */}
                         </div>
                     </main>
                 </Suspense>
