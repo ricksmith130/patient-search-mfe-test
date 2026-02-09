@@ -1,40 +1,17 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { MemoryRouter } from 'react-router-dom'
 import { render as rtlRender } from '@testing-library/react'
-import { createTestStore, TestState } from './testStoreUtils'
+import configureMockStore from 'redux-mock-store'
 
-/**
- * Renders component with Redux store
- * For integration tests with real federation
- */
+const createMockStore = configureMockStore()
+
 export const renderWithStore = (
   component: React.ReactElement,
-  initialState?: Partial<TestState>
+  storeData: Record<string, any> = {}
 ) => {
-  const store = createTestStore(initialState)
+  const store = createMockStore(storeData)
   const renderResult = rtlRender(
     <Provider store={store}>{component}</Provider>
-  )
-  return { ...renderResult, store }
-}
-
-/**
- * Renders component with router and store
- * Use for components that need routing context
- */
-export const renderWithRouterAndStore = (
-  component: React.ReactElement,
-  initialState?: Partial<TestState>,
-  initialRoute = '/'
-) => {
-  const store = createTestStore(initialState)
-  const renderResult = rtlRender(
-    <Provider store={store}>
-      <MemoryRouter initialEntries={[initialRoute]}>
-        {component}
-      </MemoryRouter>
-    </Provider>
   )
   return { ...renderResult, store }
 }

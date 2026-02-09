@@ -1,17 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-// @ts-ignore
 import { ncrsFetch } from "ncrs-host/HttpClient";
-// @ts-ignore
 import {
   navigateToSearchResultsAction,
   navigateToAdvancedSearchAction,
   navigateToPostcodeSearchAction,
 } from "ncrs-host/NavigationActions";
-// @ts-ignore
 import { activateBasicSearchTab } from "ncrs-host/TabActionCreator";
-// @ts-ignore
 import urlConfig from "ncrs-host/UrlConfig";
-// @ts-ignore
 import type { QueryArguments, PostcodeSearchArguments } from "ncrs-host/AppStateTypes";
 
 export const performBasicSearch = createAsyncThunk(
