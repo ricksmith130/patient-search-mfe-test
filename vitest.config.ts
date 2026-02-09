@@ -42,6 +42,8 @@ const federationExposes: Record<string, string> = {
   'DateInputSwitcher': 'src/js/presentation/components/DateInputSwitcher',
   'PostCodeFormatter': 'src/js/presentation/formatters/PostCodeFormatter',
   'OSPlacesAddressFinder': 'src/js/presentation/components/OSPlacesAddressFinder',
+  'PostcodeSearchValidators': 'src/js/core/validators/patientsearch/PostcodeSearchValidators',
+  'DateRangeInput': 'src/js/presentation/components/DateRangeInput',
 }
 
 // Resolves ncrs-host/* imports: explicit mock → real host source → stub fallback
