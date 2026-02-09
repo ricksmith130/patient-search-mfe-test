@@ -39,6 +39,9 @@ const federationExposes: Record<string, string> = {
   'DateFormatter': 'src/js/presentation/formatters/DateFormatter',
   'BasicTypes': 'src/js/core/types/BasicTypes',
   'AppStateTypes': 'src/js/core/types/AppStateTypes',
+  'DateInputSwitcher': 'src/js/presentation/components/DateInputSwitcher',
+  'PostCodeFormatter': 'src/js/presentation/formatters/PostCodeFormatter',
+  'OSPlacesAddressFinder': 'src/js/presentation/components/OSPlacesAddressFinder',
 }
 
 // Resolves ncrs-host/* imports: explicit mock → real host source → stub fallback
@@ -176,7 +179,6 @@ export default defineConfig({
       '@test': path.resolve(__dirname, './src/test'),
       '@components': path.resolve(__dirname, './src/components'),
       '@views': path.resolve(__dirname, './src/views'),
-      '@redux': path.resolve(__dirname, './src/redux'),
     },
   },
   define: {

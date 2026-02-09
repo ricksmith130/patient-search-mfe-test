@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import BasicSearchForm from '../BasicSearchForm'
-import { renderWithStore } from '@test/renderUtils'
+import { renderWithStore } from '../../test/renderUtils'
 
 const emptyDateParts = { day: '', month: '', year: '' }
 
