@@ -15,7 +15,7 @@ import {
 } from "ncrs-host/findTabsConstants";
 import { useAppState } from "ncrs-host/useAppState";
 import { SimulateClickEvent } from "ncrs-host/AccessibilityHelpers";
-import { hasValidRole } from "ncrs-host/PostcodeSearchHelpers";
+import { hasValidRole } from "../helpers/PostcodeSearchHelpers";
 import {
     activateAdvancedSearchTab,
     activateBasicSearchTab,

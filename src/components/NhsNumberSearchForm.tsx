@@ -11,7 +11,7 @@ import { asyncInputFocus } from "ncrs-host/FocusHelpers";
 import { useAppState } from "ncrs-host/useAppState";
 import isValid from "ncrs-host/NhsNumberValidator";
 import FormErrorSummary from "ncrs-host/FormErrorSummary";
-import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
+import { createFindPatientConnectionWarningAction } from "../redux/actions/findPatientConnectionWarningAction";
 import { nhsNumberSearch } from "ncrs-host/NhsNumberQueryActionCreator";
 import { useAppDispatch } from "ncrs-host/store";
 import { SEARCH_BY } from "ncrs-host/CommonStrings";

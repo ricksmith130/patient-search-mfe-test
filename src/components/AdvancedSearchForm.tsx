@@ -45,7 +45,7 @@ import { validateState } from "ncrs-host/CommonValidators";
 import {
   validateDateRange,
   validateStringInput,
-} from "ncrs-host/AdvancedSearchValidator";
+} from "../validators/AdvancedSearchValidator";
 import {
   datePartsItemContainsNonNumberChars,
   getDateInputSwitcherInputIds,
@@ -59,7 +59,7 @@ import { formatPostcode } from "ncrs-host/PostCodeFormatter";
 import FormErrorSummary, {
   FormErrorSummaryError,
 } from "ncrs-host/FormErrorSummary";
-import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
+import { createFindPatientConnectionWarningAction } from "../redux/actions/findPatientConnectionWarningAction";
 import { performAdvancedSearch } from "../redux/thunks/patientSearchThunks";
 import {
   resetFormState as resetFormStateAction,

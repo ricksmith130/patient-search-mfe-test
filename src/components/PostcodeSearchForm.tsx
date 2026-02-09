@@ -42,7 +42,7 @@ import {
     validateDateRange,
     validateDOBDateRange,
     validateStringInput,
-} from "ncrs-host/PostcodeSearchValidators";
+} from "../validators/PostcodeSearchValidators";
 import {
     datePartsItemContainsNonNumberChars,
     getDateInputSwitcherInputIds,
@@ -59,7 +59,7 @@ import { formatPostcode } from "ncrs-host/PostCodeFormatter";
 import FormErrorSummary, {
     FormErrorSummaryError,
 } from "ncrs-host/FormErrorSummary";
-import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
+import { createFindPatientConnectionWarningAction } from "../redux/actions/findPatientConnectionWarningAction";
 import { performPostcodeSearch } from "../redux/thunks/patientSearchThunks";
 import {
     resetFormState,

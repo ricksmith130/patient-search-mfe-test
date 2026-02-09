@@ -6,17 +6,17 @@ import { initialiseRefreshCheck } from "ncrs-host/initialiseRefreshCheck";
 import { useAppState } from "ncrs-host/useAppState";
 import { useSkipLink } from "ncrs-host/useSkipLink";
 // import Bulletins from "ncrs-host/Bulletins"; // TODO: Temporarily disabled
-import FindPatientConnectionWarning from "ncrs-host/FindPatientConnectionWarning";
-import ConnectedPatientNotFound from "ncrs-host/PatientNotFound";
 import PatientRetrievalBlocked from "ncrs-host/PatientRetrievalBlocked";
 import { SelectedSearchViewTab } from "ncrs-host/AppStateTypes";
+import FindPatientConnectionWarning from "../components/FindPatientConnectionWarning";
+import ConnectedPatientNotFound from "../components/PatientNotFound";
 import {
     ADVANCED_SEARCH_TITLE,
     BASIC_SEARCH_TITLE,
     NHS_NUMBER_SEARCH_TITLE,
     POSTCODE_SEARCH_TITLE,
-} from "ncrs-host/SearchTitles";
-import { NO_NHS_NUMBER_FOUND_BUTTON_TEXT } from "ncrs-host/PatientNotFoundStrings";
+} from "../constants/SearchTitles";
+import { NO_NHS_NUMBER_FOUND_BUTTON_TEXT } from "../constants/PatientNotFoundStrings";
 import { FIND_PATIENT_PAGE_HEADER } from "../constants/FindPatientStrings";
 import FindPatientTabs from "../components/FindPatientTabs";
 import NhsNumberSearchForm from "../components/NhsNumberSearchForm";

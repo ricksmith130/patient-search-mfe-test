@@ -47,42 +47,7 @@ declare module 'ncrs-host/IntersectionObserver' {
   export = mod
 }
 
-declare module 'ncrs-host/SearchResultsNavigation' {
-  const mod: any
-  export = mod
-}
-
-declare module 'ncrs-host/SearchTitles' {
-  const mod: any
-  export = mod
-}
-
-declare module 'ncrs-host/PatientNotFoundStrings' {
-  const mod: any
-  export = mod
-}
-
 declare module 'ncrs-host/LogTransactions' {
-  const mod: any
-  export = mod
-}
-
-declare module 'ncrs-host/AllocateNHSNumberLinks' {
-  const mod: any
-  export = mod
-}
-
-declare module 'ncrs-host/QueryRefineOptions' {
-  const mod: any
-  export = mod
-}
-
-declare module 'ncrs-host/QueryResultsSummaryFormatter' {
-  const mod: any
-  export = mod
-}
-
-declare module 'ncrs-host/SearchTipsFormatter' {
   const mod: any
   export = mod
 }

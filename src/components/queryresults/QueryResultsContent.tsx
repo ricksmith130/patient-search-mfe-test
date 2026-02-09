@@ -9,19 +9,15 @@ import {
     PSR_SEARCH_TIPS_HEADER,
     PSR_TOO_MANY_RESULTS_LINK,
 } from "../../constants/PatientSearchResultsStrings";
-// @ts-ignore - Federated module
-import AllocateNHSNumberLinks from "ncrs-host/AllocateNHSNumberLinks";
-// @ts-ignore - Federated module
-import QueryRefineOptions from "ncrs-host/QueryRefineOptions";
+import AllocateNHSNumberLinks from "./AllocateNHSNumberLinks";
+import QueryRefineOptions from "./QueryRefineOptions";
 // @ts-ignore - Federated module
 import Sentinel from "ncrs-host/Sentinel";
-// @ts-ignore - Federated module
 import {
     formatPostcodeSearchResultsSummary,
     formatResultsSummary,
-} from "ncrs-host/QueryResultsSummaryFormatter";
-// @ts-ignore - Federated module
-import { formatSearchTips } from "ncrs-host/SearchTipsFormatter";
+} from "../../formatters/QueryResultsSummaryFormatter";
+import { formatSearchTips } from "../../formatters/SearchTipsFormatter";
 import QueryResultsTable from "./QueryResultsTable";
 // @ts-ignore - Federated module
 import { logTransaction } from "ncrs-host/LogActionCreator";

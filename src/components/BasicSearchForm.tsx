@@ -30,11 +30,11 @@ import { GENDER_SEARCH_VALUES } from "ncrs-host/Vocabulary";
 import { OnEnterPressed } from "ncrs-host/AccessibilityHelpers";
 import { asyncFocus } from "ncrs-host/FocusHelpers";
 import { validateState } from "ncrs-host/CommonValidators";
-import { validateStringInput } from "ncrs-host/AdvancedSearchValidator";
+import { validateStringInput } from "../validators/AdvancedSearchValidator";
 import {
     validateMandatoryDate,
     validateSearchGender,
-} from "ncrs-host/PatientSearchValidationRules";
+} from "../validators/PatientSearchValidationRules";
 import {
     datePartsItemContainsNonNumberChars,
     isDateBlank,
@@ -47,7 +47,7 @@ import {
 import FormErrorSummary, {
     FormErrorSummaryError,
 } from "ncrs-host/FormErrorSummary";
-import { createFindPatientConnectionWarningAction } from "ncrs-host/ModalActionCreator";
+import { createFindPatientConnectionWarningAction } from "../redux/actions/findPatientConnectionWarningAction";
 import { performBasicSearch } from "../redux/thunks/patientSearchThunks";
 import {
     resetFormState as resetFormStateAction,

@@ -21,12 +21,9 @@ import PatientRetrievalBlocked from "ncrs-host/PatientRetrievalBlocked";
 // @ts-ignore - Federated module
 import withIntersectionObserver from "ncrs-host/IntersectionObserver";
 import { QueryResultsContent } from "../components/queryresults/QueryResultsContent";
-// @ts-ignore - Federated module
-import SearchResultsNavigation from "ncrs-host/SearchResultsNavigation";
-// @ts-ignore - Federated module
-import { PATIENT_SEARCH_RESULTS_TITLE } from "ncrs-host/SearchTitles";
-// @ts-ignore - Federated module
-import { NHS_NUMBER_RETRIEVAL_BLOCKED_FROM_SEARCH_PAGE } from "ncrs-host/PatientNotFoundStrings";
+import SearchResultsNavigation from "../components/SearchResultsNavigation";
+import { PATIENT_SEARCH_RESULTS_TITLE } from "../constants/SearchTitles";
+import { NHS_NUMBER_RETRIEVAL_BLOCKED_FROM_SEARCH_PAGE } from "../constants/PatientNotFoundStrings";
 
 type QueryResultsProps = {
     observerRefCallback: React.RefObject<HTMLDivElement>;

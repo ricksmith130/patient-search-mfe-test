@@ -25,37 +25,10 @@ declare module "ncrs-host/useSkipLink" {
     export const useSkipLink: (selector: string) => void;
 }
 
-// Browser Page Titles
-declare module "ncrs-host/SearchTitles" {
-    export const NHS_NUMBER_SEARCH_TITLE: string;
-    export const BASIC_SEARCH_TITLE: string;
-    export const ADVANCED_SEARCH_TITLE: string;
-    export const POSTCODE_SEARCH_TITLE: string;
-}
-
-// PatientNotFoundStrings
-declare module "ncrs-host/PatientNotFoundStrings" {
-    export const NO_NHS_NUMBER_FOUND_BUTTON_TEXT: string;
-    export const NO_NHS_NUMBER_FOUND_MESSAGE: string;
-    export const NO_NHS_NUMBER_FOUND_TITLE: string;
-    export const NHS_NUMBER_RETRIEVAL_BLOCKED_TITLE: string;
-    export const NHS_NUMBER_RETRIEVAL_BLOCKED_DEFAULT: string;
-}
 // Bulletins component
 declare module "ncrs-host/Bulletins" {
     const Bulletins: React.FC;
     export default Bulletins;
-}
-
-// Modal components
-declare module "ncrs-host/FindPatientConnectionWarning" {
-    const FindPatientConnectionWarning: React.FC;
-    export default FindPatientConnectionWarning;
-}
-
-declare module "ncrs-host/PatientNotFound" {
-    const PatientNotFound: React.FC;
-    export default PatientNotFound;
 }
 
 declare module "ncrs-host/PatientRetrievalBlocked" {
@@ -149,11 +122,6 @@ declare module "ncrs-host/DateHelper" {
     export const getDateRange: (from?: any, to?: any) => { from: string; to: string };
 }
 
-// PostcodeSearchHelpers
-declare module "ncrs-host/PostcodeSearchHelpers" {
-    export const hasValidRole: (userPermissions: any) => boolean;
-}
-
 // CommonValidators
 declare module "ncrs-host/CommonValidators" {
     export const validateState: (inputs: any) => boolean;
@@ -163,25 +131,6 @@ declare module "ncrs-host/CommonValidators" {
 declare module "ncrs-host/NhsNumberValidator" {
     const isValid: (nhsNumber: string) => boolean;
     export default isValid;
-}
-
-// AdvancedSearchValidator
-declare module "ncrs-host/AdvancedSearchValidator" {
-    export const validateStringInput: (field: string, value: string, algorithmicSearch?: boolean, firstnameBlank?: boolean, postcodeBlank?: boolean) => any;
-    export const validateDateRange: (dateFrom: any, dateTo: any, fromLabel: string, toLabel: string) => { dateFrom: any; dateTo: any };
-}
-
-// PatientSearchValidationRules
-declare module "ncrs-host/PatientSearchValidationRules" {
-    export const validateMandatoryDate: (value: any, label: string) => any;
-    export const validateSearchGender: (value: string) => any;
-}
-
-// PostcodeSearchValidators
-declare module "ncrs-host/PostcodeSearchValidators" {
-    export const validateStringInput: (field: string, value: string) => any;
-    export const validateDateRange: (dateFrom: any, dateTo: any, options: any) => { dateFrom: any; dateTo: any };
-    export const validateDOBDateRange: (dateFrom: any, dateTo: any, fromLabel: string, toLabel: string) => { dateFrom: any; dateTo: any };
 }
 
 // DateConstants
@@ -233,7 +182,6 @@ declare module "ncrs-host/TabActionCreator" {
 
 // ModalActionCreator
 declare module "ncrs-host/ModalActionCreator" {
-    export const createFindPatientConnectionWarningAction: () => any;
     export const createCloseModalAction: () => any;
 }
 
