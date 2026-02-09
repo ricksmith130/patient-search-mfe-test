@@ -24,12 +24,12 @@ describe('NhsNumberSearchForm', () => {
       ...baseState,
       patientSearch: { searchToken: '9999999999' },
     }
-    const { store } = renderWithStore(<NhsNumberSearchForm />, testState)
+    const { getActions } = renderWithStore(<NhsNumberSearchForm />, testState)
 
     const submitButton = screen.getByRole('button', { name: /find a patient/i })
     await user.click(submitButton)
 
-    const actions = store.getActions()
+    const actions = getActions()
     expect(actions).toContainEqual(
       expect.objectContaining({ type: 'NHS_NUMBER_SEARCH_REQUESTED', nhsNumber: '9999999999' })
     )
@@ -72,12 +72,12 @@ describe('NhsNumberSearchForm', () => {
       patientSearch: { searchToken: '9999999999' },
       connection: { internetConnection: false },
     }
-    const { store } = renderWithStore(<NhsNumberSearchForm />, testState)
+    const { getActions } = renderWithStore(<NhsNumberSearchForm />, testState)
 
     const submitButton = screen.getByRole('button', { name: /find a patient/i })
     await user.click(submitButton)
 
-    const actions = store.getActions()
+    const actions = getActions()
     expect(actions).toContainEqual(
       expect.objectContaining({ type: 'NO_CONNECTION_FIND_PATIENT_MODAL' })
     )
@@ -94,10 +94,10 @@ describe('NhsNumberSearchForm', () => {
         error: false,
       },
     }
-    const { store } = renderWithStore(<NhsNumberSearchForm />, testState)
+    const { getActions } = renderWithStore(<NhsNumberSearchForm />, testState)
 
     expect(screen.getByRole('textbox', { name: /nhs number/i })).toBeInTheDocument()
-    const actions = store.getActions()
+    const actions = getActions()
     expect(actions).toContainEqual(
       expect.objectContaining({ type: 'NHS_NUMBER_SEARCH_REQUESTED', nhsNumber: '9999999999' })
     )

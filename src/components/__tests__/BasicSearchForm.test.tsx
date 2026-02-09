@@ -76,12 +76,12 @@ describe('BasicSearchForm', () => {
         gender: '2',
       },
     }
-    const { store } = renderWithStore(<BasicSearchForm />, filledState)
+    const { getActions } = renderWithStore(<BasicSearchForm />, filledState)
 
     const clearButton = screen.getByRole('button', { name: /clear/i })
     await user.click(clearButton)
 
-    const actions = store.getActions()
+    const actions = getActions()
     expect(actions).toContainEqual(
       expect.objectContaining({ type: 'findPatient/resetFormState' })
     )
@@ -99,12 +99,12 @@ describe('BasicSearchForm', () => {
         gender: '2',
       },
     }
-    const { store } = renderWithStore(<BasicSearchForm />, offlineState)
+    const { getActions } = renderWithStore(<BasicSearchForm />, offlineState)
 
     const submitButton = screen.getByRole('button', { name: /find a patient/i })
     await user.click(submitButton)
 
-    const actions = store.getActions()
+    const actions = getActions()
     expect(actions).toContainEqual(
       expect.objectContaining({ type: 'NO_CONNECTION_FIND_PATIENT_MODAL' })
     )
