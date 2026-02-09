@@ -34,14 +34,15 @@ beforeAll(() => {
   })
 })
 
-// Suppress expected React warnings
+// Suppress expected React and NHS UK component warnings
 const originalError = console.error
 beforeAll(() => {
   console.error = (...args) => {
     if (
       typeof args[0] === 'string' &&
       (args[0].includes('Warning: An update to') ||
-        args[0].includes('was not wrapped in act'))
+        args[0].includes('not wrapped in act(...)') ||
+        args[0].includes('checked` prop to a form field without an `onChange`'))
     ) {
       return
     }

@@ -28,6 +28,17 @@ const federationExposes: Record<string, string> = {
   'TabActionCreator': 'src/js/redux/actions/TabActionCreator',
   'UrlConfig': 'src/js/config/Config',
   'HttpClient': 'src/js/redux/actions/HttpClient',
+  'SingleDateInputRegExps': 'src/js/core/constants/SingleDateInputRegExps',
+  'GenericStrings': 'src/js/core/constants/uistrings/pdsedit/GenericStrings',
+  'Vocabulary': 'src/js/core/constants/vocabulary/Vocabulary',
+  'CommonValidators': 'src/js/core/validators/CommonValidators',
+  'AdvancedSearchValidator': 'src/js/core/validators/patientsearch/AdvancedSearchValidator',
+  'PatientSearchValidationRules': 'src/js/core/validators/patientsearch/PatientSearchValidationRules',
+  'DateHelper': 'src/js/core/helpers/DateHelper',
+  'SingleDateInput': 'src/js/presentation/components/SingleDateInput',
+  'DateFormatter': 'src/js/presentation/formatters/DateFormatter',
+  'BasicTypes': 'src/js/core/types/BasicTypes',
+  'AppStateTypes': 'src/js/core/types/AppStateTypes',
 }
 
 // Resolves ncrs-host/* imports: explicit mock → real host source → stub fallback

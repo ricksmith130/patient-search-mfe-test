@@ -1,6 +1,0 @@
-export const NHS_NUMBER_HINT_ID = 'nhs-number-hint'
-export const NHS_NUMBER_SEARCH_FORM_NHS_NUMBER_ID = 'nhs-number-search-form-nhs-number'
-export const NHS_NUMBER_SUBMIT_ID = 'nhs-number-submit'
-export const BASIC_SEARCH_SUBMIT_ID = 'basic-search-submit'
-export const ADVANCED_SEARCH_SUBMIT_ID = 'advanced-search-submit'
-export const POSTCODE_SEARCH_SUBMIT_ID = 'postcode-search-submit'

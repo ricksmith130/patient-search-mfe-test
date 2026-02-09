@@ -1,27 +1,8 @@
-import { afterAll, beforeAll, describe, it, expect } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import NhsNumberSearchForm from '../NhsNumberSearchForm'
 import { renderWithStore } from '@test/renderUtils'
-
-// Suppress expected console warnings from NHS UK components
-const originalError = console.error
-beforeAll(() => {
-  console.error = (...args: unknown[]) => {
-    if (
-      typeof args[0] === 'string' &&
-      (args[0].includes('not wrapped in act(...)') ||
-        args[0].includes('checked` prop to a form field without an `onChange`'))
-    ) {
-      return
-    }
-    originalError.call(console, ...args)
-  }
-})
-
-afterAll(() => {
-  console.error = originalError
-})
 
 const baseState = {
   deepLink: { active: false, nhsNumber: '', urpId: '', searchUuid: '', error: false },
