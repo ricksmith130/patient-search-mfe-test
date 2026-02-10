@@ -1,0 +1,11 @@
+services:
+  ncrs-shell:
+    build:
+      context: ../../ncrs/spa
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_SERVICE_URL_ROOT=http://localhost:3004/api
+      - VITE_BASE_URL_ROOT=http://localhost:5173

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import fs from 'fs'
 
-const hostDir = path.resolve(__dirname, '../../ncrs/spa')
+const hostDir = path.resolve(__dirname, 'host-source')
 
 // Mapping from ncrs-host module names to host source file paths (from federation exposes)
 const federationExposes: Record<string, string> = {
@@ -159,6 +159,7 @@ export default defineConfig({
     environment: 'happy-dom',
     setupFiles: './src/test/setupTests.ts',
     css: true,
+    exclude: ['node_modules/**', 'host-source/**'],
     testTimeout: 30000,
     hookTimeout: 30000,
     coverage: {
