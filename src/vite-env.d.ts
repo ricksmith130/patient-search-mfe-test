@@ -190,20 +190,6 @@ declare module "ncrs-host/NhsNumberQueryActionCreator" {
     export const nhsNumberSearch: (nhsNumber: string) => any;
 }
 
-// BasicSearchQueryActionCreator
-declare module "ncrs-host/BasicSearchQueryActionCreator" {
-    export const runBasicQuery: (args: any) => any;
-}
-
-// AdvancedSearchQueryActionCreator
-declare module "ncrs-host/AdvancedSearchQueryActionCreator" {
-    export const runAdvancedQuery: (args: any) => any;
-}
-
-// PostcodeSearchQueryActionCreator
-declare module "ncrs-host/PostcodeSearchQueryActionCreator" {
-    export const runPostcodeQuery: (args: any) => any;
-}
 
 // SaveQueryActionCreator
 declare module "ncrs-host/SaveQueryActionCreator" {

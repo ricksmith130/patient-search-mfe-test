@@ -20,7 +20,7 @@ import {
     PATIENT_SEARCH_SURNAME_LABEL,
     PATIENT_SEARCH_VALIDATION_REQUIRED_FOR_LAST_NAME,
     PATIENT_SEARCH_VALIDATION_REQUIRED_FOR_WIDEN,
-} from "ncrs-host/FindPatientStrings";
+} from "../constants/FindPatientStrings";
 
 export const validateStringInput = (
     fieldName: keyof State["inputs"],

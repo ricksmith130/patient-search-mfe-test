@@ -35,7 +35,7 @@ import {
     PATIENT_SEARCH_VALIDATION_REQUIRED,
     PATIENT_SEARCH_VALIDATION_REQUIRED_FOR_WIDEN,
     PATIENT_SEARCH_VALIDATION_REQUIRED_VOWEL,
-} from "ncrs-host/FindPatientStrings";
+} from "../constants/FindPatientStrings";
 
 export const validateOptionalPostcode = (
     postcode: string,
