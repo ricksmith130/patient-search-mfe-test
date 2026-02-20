@@ -30,7 +30,7 @@ export default defineConfig({
         "redux": { singleton: true, requiredVersion: "^5.0.1" },
         "react-redux": { singleton: true, requiredVersion: "^9.2.0" },
         "react-router-dom": { singleton: true, requiredVersion: "^7.13.0" },
-        "nhsuk-react-components": { singleton: true, requiredVersion: "^6.0.0-beta.3" },
+        "nhsuk-react-components": { singleton: true, requiredVersion: "6.0.0-beta.3" },
         "nhsuk-react-components-extensions": { singleton: true, requiredVersion: "^2.3.5-beta" },
       }
     }),
