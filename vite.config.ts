@@ -15,7 +15,7 @@ export default defineConfig({
         'ncrs-host': {
           type: 'module',
           name: 'ncrs-host',
-          entry: 'https://dyaczj620kiv8.cloudfront.net/eph/25/nationalcarerecordsservice/static/remoteEntry.js',
+          entry: 'https://dyaczj620kiv8.cloudfront.net/eph/25/remoteEntry.js',
           entryGlobalName: 'ncrs_host',
           shareScope: 'default'
         },
@@ -25,8 +25,8 @@ export default defineConfig({
       },
       shareScope: 'default',
       shared: {
-        "react": { singleton: true, requiredVersion: "19.1.1" },
-        "react-dom": { singleton: true, requiredVersion: "19.1.1" },
+        "react": { singleton: true, requiredVersion: "^19.1.1" },
+        "react-dom": { singleton: true, requiredVersion: "^19.1.1" },
         "redux": { singleton: true, requiredVersion: "^5.0.1" },
         "react-redux": { singleton: true, requiredVersion: "^9.2.0" },
         "react-router-dom": { singleton: true, requiredVersion: "^7.13.0" },
