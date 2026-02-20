@@ -15,7 +15,7 @@ export default defineConfig({
         'ncrs-host': {
           type: 'module',
           name: 'ncrs-host',
-          entry: 'http://localhost:5173/nationalcarerecordsservice/static/remoteEntry.js',
+          entry: 'https://dyaczj620kiv8.cloudfront.net/eph/25/nationalcarerecordsservice/static/remoteEntry.js',
           entryGlobalName: 'ncrs_host',
           shareScope: 'default'
         },
@@ -29,7 +29,7 @@ export default defineConfig({
         "react-dom": { singleton: true, requiredVersion: "19.1.1" },
         "redux": { singleton: true, requiredVersion: "^5.0.1" },
         "react-redux": { singleton: true, requiredVersion: "^9.2.0" },
-        "react-router-dom": { singleton: true, requiredVersion: "7.9.6" },
+        "react-router-dom": { singleton: true, requiredVersion: "^7.13.0" },
         "nhsuk-react-components": { singleton: true, requiredVersion: "^6.0.0-beta.3" },
         "nhsuk-react-components-extensions": { singleton: true, requiredVersion: "^2.3.5-beta" },
       }
