@@ -38,8 +38,6 @@ import {
 import { RESET } from "ncrs-host/GenericStrings";
 // @ts-ignore - Federated module
 import {
-    GP_PRACTICE_CODE_NOT_APPLICABLE,
-    GP_PRACTICE_CODE_NOT_KNOWN,
     NO_PRIMARY_CARE_PROVIDER_CODE,
 } from "ncrs-host/SpineVocabulary";
 // @ts-ignore - Federated module
@@ -99,6 +97,7 @@ import {
     RESULTS_FILTER_GENDER_LABEL,
     RESULTS_FILTER_GENDER_MALE_LABEL,
 } from "../../constants/PatientSearchResultsStrings";
+import { GP_PRACTICE_CODE_NOT_APPLICABLE, GP_PRACTICE_CODE_NOT_KNOWN } from "../../constants/SpineVocabulary";
 
 export const formatPracticeCode = (row: QueryResult) => {
     if (row.sensitiveData) {

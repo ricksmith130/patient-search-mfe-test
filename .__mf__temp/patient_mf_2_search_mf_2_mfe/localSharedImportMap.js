@@ -29,6 +29,11 @@
             return pkg;
         }
       ,
+        "react-router-dom": async () => {
+          let pkg = await import("__mf__virtual/patient_mf_2_search_mf_2_mfe__prebuild__react_mf_2_router_mf_2_dom__prebuild__.js");
+            return pkg;
+        }
+      ,
         "redux": async () => {
           let pkg = await import("__mf__virtual/patient_mf_2_search_mf_2_mfe__prebuild__redux__prebuild__.js");
             return pkg;
@@ -39,7 +44,7 @@
       
           "nhsuk-react-components": {
             name: "nhsuk-react-components",
-            version: "6.0.0-beta.3",
+            version: "6.0.0-beta.4",
             scope: ["default"],
             loaded: false,
             from: "patient-search-mfe",
@@ -62,7 +67,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^6.0.0-beta.3",
+              requiredVersion: "6.0.0-beta.4",
               
             }
           }
@@ -122,7 +127,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "19.1.1",
+              requiredVersion: "^19.1.1",
               
             }
           }
@@ -152,7 +157,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "19.1.1",
+              requiredVersion: "^19.1.1",
               
             }
           }
@@ -183,6 +188,36 @@
             shareConfig: {
               singleton: true,
               requiredVersion: "^9.2.0",
+              
+            }
+          }
+        ,
+          "react-router-dom": {
+            name: "react-router-dom",
+            version: "7.9.6",
+            scope: ["default"],
+            loaded: false,
+            from: "patient-search-mfe",
+            async get () {
+              if (false) {
+                throw new Error(`Shared module '${"react-router-dom"}' must be provided by host`);
+              }
+              usedShared["react-router-dom"].loaded = true
+              const {"react-router-dom": pkgDynamicImport} = importMap
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^7.13.0",
               
             }
           }
@@ -223,7 +258,7 @@
                   entryGlobalName: "ncrs_host",
                   name: "ncrs-host",
                   type: "module",
-                  entry: "http://localhost:5173/nationalcarerecordsservice/static/remoteEntry.js",
+                  entry: "http://localhost:5173/remoteEntry.js",
                   shareScope: "default",
                 }
           

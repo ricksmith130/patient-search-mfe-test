@@ -2,7 +2,7 @@ import {
     ALLOCATE_NHS_NUMBER_LINK_ID,
     BNA_ACTION_LINK_ID,
 } from "ncrs-host/IdConstants";
-import { useSkipLink } from "ncrs-host/UseSkipLink";
+import { useSkipLink } from "ncrs-host/useSkipLink";
 import { OnEnterPressed } from "ncrs-host/AccessibilityHelpers";
 import { navigateToBnaNotifierTab } from "ncrs-host/BnaActionCreator";
 import {
