@@ -1,0 +1,84 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build application
+        run: yarn build
+        env:
+          # Add any required environment variables here for the build
+          NODE_ENV: production
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: eu-west-2
+
+      # 1. New Step: Ensure Terraform state infrastructure exists
+      #    This runs before 'terraform init' to solve the chicken-and-egg problem.
+      - name: Ensure Terraform State Infrastructure
+        run: |
+          chmod +x ./scripts/ensure-tf-state.sh
+          # Pass the existing values from your main.tf
+          # Bucket: ncrs-terraform-state
+          # Region: eu-west-2
+          ./scripts/ensure-tf-state.sh "ncrs-terraform-state" "eu-west-2"
+
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.7
+
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        working-directory: ./terraform
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve tfplan
+
+      - name: Get Terraform Outputs
+        id: tf-outputs
+        working-directory: ./terraform
+        run: |
+          echo "bucket_name=$(terraform output -raw bucket_name)" >> $GITHUB_OUTPUT
+          echo "cloudfront_id=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT
+
+      - name: Sync S3 Bucket
+        run: |
+          aws s3 sync dist/ s3://${{ steps.tf-outputs.outputs.bucket_name }} --delete
+        env:
+          AWS_REGION: eu-west-2
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ steps.tf-outputs.outputs.cloudfront_id }} --paths "/*"
