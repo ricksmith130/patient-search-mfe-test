@@ -35,7 +35,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::123456789012:role/github-actions-deploy-role
           aws-region: eu-west-2
 
       # 1. New Step: Ensure Terraform state infrastructure exists
